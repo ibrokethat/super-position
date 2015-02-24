@@ -1,0 +1,33 @@
+{
+  "name": "super-position",
+  "version": "1.0.0",
+  "description": "Executing code in more than one env at a time.",
+  "main": "index.es",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ibrokethat/super-position"
+  },
+  "author": {
+    "Simon Jefford": "si@ibrokethat.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrokethat/super-position/issues"
+  },
+  "homepage": "https://github.com/ibrokethat/super-position",
+  "dependencies": {
+    "babel-runtime": "^4.4.5",
+    "co": "4.4.x",
+    "koa": "^0.18.0",
+    "koa-router": "4.2.x",
+    "koa-static": "^1.4.9"
+  },
+  "devDependencies": {
+    "babelify": "^5.0.3"
+  },
+  "scripts": {
+    "test": "npm test",
+    "build": "browserify client.js -t [babelify --blacklist regenerator --optional runtime] --outfile build.js",
+    "start-dev": "babel-node server.js"
+  }
+}
