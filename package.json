@@ -23,11 +23,13 @@
     "koa-static": "^1.4.9"
   },
   "devDependencies": {
-    "babelify": "^5.0.3"
+    "babel": "^4.5.5",
+    "babelify": "^5.0.3",
+    "browserify": "^9.0.3"
   },
   "scripts": {
     "test": "npm test",
-    "build": "browserify client.js -t [babelify --blacklist regenerator --optional runtime] --outfile build.js",
-    "start-dev": "babel-node server.js"
+    "build": "./node_modules/.bin/browserify client.js -t [babelify --blacklist regenerator --optional runtime] --outfile build.js",
+    "start-dev": "./node_modules/babel/bin/babel-node --harmony server.js"
   }
 }
